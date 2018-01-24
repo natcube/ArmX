@@ -170,7 +170,7 @@ new ArmPlayer(PLAYER, {
   debug:true,
   source: {
      platform:'xiami',
-     list: 'top',
+     list: 'album:234282',
      apikey: function(){
         return window.__onece;
      }
