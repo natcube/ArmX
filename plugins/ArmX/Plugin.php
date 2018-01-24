@@ -888,7 +888,7 @@ SQL;
      * @param  [type]                   $layout [description]
      * @return [type]                           [description]
      */
-    public static function getDefaultFieldItems(&$layout)
+    public static function getDefaultFieldItems( Typecho_Widget_Helper_Layout $layout)
     {
         $config = self::getConfig();
         $options = self::getOptions();
