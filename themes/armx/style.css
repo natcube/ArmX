@@ -869,7 +869,7 @@ body .loading-active {
 .article-content h2 {
 	border-bottom: 1px solid #f1f1f1;
 	padding-bottom: 6px;
-	font-weight: 700;
+	font-size: 22px;
 }
 
 .article-content h3 {
