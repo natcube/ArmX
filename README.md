@@ -1,4 +1,6 @@
 # ArmX
 typecho主题及插件ArmX
-# demo
+# Demo
 https://codeup.me
+# 主页
+https://codeup.me/armx/
