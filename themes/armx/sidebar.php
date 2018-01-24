@@ -45,7 +45,9 @@
         </div>
     </section>
 <?php endif; ?>
-
+    <section class="widget">
+        <a href="https://codeup.me/armx.html"><img src="https://codeup.cdn.armjs.com/uploads/2018/01/1574857160.png"></a>
+    </section>
     <?php if ($this->is('single')): ?>
         <section class="widget">
             <div id="article-index"></div>
