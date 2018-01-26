@@ -16,8 +16,8 @@ class ArmX_Plugin implements Typecho_Plugin_Interface
     const THUMB_FIELD_TYPE = 'str';
     const IMGPREFIX = 'img';
 
-    protected $IMGEXTS = array('jpg', 'jpeg', 'gif', 'png', 'tiff', 'bmp');
-    protected $APIS = array(
+    protected static $IMGEXTS = array('jpg', 'jpeg', 'gif', 'png', 'tiff', 'bmp');
+    protected static $APIS = array(
                 'user' => '用户, 支持 <code>login,logout,register,oauthLogin,oauthLogout,bindOAuth</code>',
                 'music' => '音乐, 支持 <code>search,song,album,playlist,artist,lyric,media,pic,url,top</code>',
                 'oauth' => '第三方登录, 支持 <code>qq,weibo,osc,github,alipay</code>'
