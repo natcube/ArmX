@@ -16,8 +16,8 @@ class ArmX_Plugin implements Typecho_Plugin_Interface
     const THUMB_FIELD_TYPE = 'str';
     const IMGPREFIX = 'img';
 
-    const IMGEXTS = array('jpg', 'jpeg', 'gif', 'png', 'tiff', 'bmp');
-    const APIS = array(
+    protected $IMGEXTS = array('jpg', 'jpeg', 'gif', 'png', 'tiff', 'bmp');
+    protected $APIS = array(
                 'user' => '用户, 支持 <code>login,logout,register,oauthLogin,oauthLogout,bindOAuth</code>',
                 'music' => '音乐, 支持 <code>search,song,album,playlist,artist,lyric,media,pic,url,top</code>',
                 'oauth' => '第三方登录, 支持 <code>qq,weibo,osc,github,alipay</code>'
@@ -350,7 +350,7 @@ SQL;
      */
     public static function isImage($ext)
     {
-        return in_array($ext, self::IMGEXTS);
+        return in_array($ext, self::$IMGEXTS);
     }
 
     /**
@@ -537,7 +537,7 @@ SQL;
 ';
         $gravatarPrefixDiv->html($gravatarPrefixHTML);
 
-        $api = new Typecho_Widget_Helper_Form_Element_Checkbox('api', self::APIS, $config->api, _t('启用API'));
+        $api = new Typecho_Widget_Helper_Form_Element_Checkbox('api', self::$APIS, $config->api, _t('启用API'));
         $api->multiMode();
 
         if (!empty($config->api) && !in_array('oauth', $config->api)) {
