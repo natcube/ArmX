@@ -6,8 +6,7 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
-}  
-  
+} 
 ::-webkit-scrollbar-track,  
 ::-webkit-scrollbar-thumb {
   border-radius: 999px;
