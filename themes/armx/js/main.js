@@ -2469,6 +2469,17 @@ function oauthError(msg){
     ArmMessage.error(msg?msg:'请检查网络后重试');
 }
 
+function toggleNav() {
+  var nav = document.getElementById('nav');
+  var className = nav.className;
+  if (/nav-show/i.test(className)) {
+    className = className.replace('nav-show', '');
+  }else{
+    className += ' nav-show';
+  }
+  nav.className = className;
+}
+
 /**
  * 页面初始化
  * @author NatLiu
@@ -2503,6 +2514,8 @@ function pageInit(){
     e.preventDefault();
     return false;
   });
+
+  addEventHandler(document.getElementById('menu-switch'), 'click', toggleNav);
 }
 
 /**

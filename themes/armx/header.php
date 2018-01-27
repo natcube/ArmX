@@ -32,7 +32,8 @@
         <a id="logo" class="header-logo" href="<?php $this->options->siteUrl(); ?>"<?php if(!empty($this->options->logoUrl)):?> style="background:url(<?php echo $this->options->logoUrl;?>) no-repeat 0 50%;"<?php endif;?>>
             <h1><?php $this->options->title(); ?></h1>
         </a>
-        <ul class="nav">
+        <a class="menu-switch" id="menu-switch"></a>
+        <ul class="nav" id="nav">
         <li><a<?php if($this->is('index')){ ?> class="current"<?php } ?> href="<?php $this->options->siteUrl(); ?>"><?php _e('首页'); ?></a></li>
         <?php $categories = $this->widget('Widget_Metas_Category_List')->to($category); while($category->next()): ?>
         <?php if($category->parent=='0'):?>

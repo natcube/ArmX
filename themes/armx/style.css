@@ -321,6 +321,16 @@ body .loading-active {
 	display: none;
 }
 
+.menu-switch {
+	display: block;
+	width: 44px;
+	height: 44px;
+	margin-left: 10px;
+	float: left;
+	background: url(img/icon-menu.png) no-repeat 50%;
+	display: none;
+}
+
 .nav {
 	float: left;
 	margin-left: 100px;
@@ -2144,16 +2154,41 @@ body .loading-active {
 		width: 33px;
 		height: 44px;
 		background-position: -15px 6px;
+		margin-left: 6px;
+	}
+
+	.menu-switch {
+		display: inline-block;
 	}
 
 	.nav {
-		margin-left: 10px;
+		display: none;
+		position: absolute;
+		margin:0;
+		padding: 0;
+		top: 45px;
+		left: 0;
+		width: 100%;
+		right: 0;
+		background: #efefef;
+		border-bottom: 1px solid #dedede;
 	}
-
+	.nav-show {
+		display: block;
+	}
+	.nav:after {
+		display: block;
+		content: '';
+		clear: both;
+		width: 100%;
+		height: 0;
+	}
 	.nav li a {
 		line-height: 44px;
-		height: 41px;
-		border-bottom-width: 3px;
+		height: 44px;
+		border: 0;
+		text-align:  center;
+		display: block;
 	}
 
 	.user-tools, .user-notice {
