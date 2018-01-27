@@ -838,6 +838,9 @@ body .loading-active {
 
 .article-content {
 	font-size: 16px;
+	white-space: normal;
+	word-break: break-all;
+	word-wrap: break-word;
 }
 
 .article-content blockquote {
@@ -1057,6 +1060,9 @@ body .loading-active {
 	color: #555;
 	font-size: 14px;
 	padding: 10px 0;
+	white-space: normal;
+	word-break: break-all;
+	word-wrap: break-word;
 }
 
 .comment-meta p{
