@@ -522,7 +522,7 @@ SQL;
         $uploadDirHTML = '<label class="typecho-label">上传目录</label>
 <input type="text" class="text" value="' . $options->uploadDir . '" name="uploadDir" />
 <p class="description">修改上传目录，默认目录为<code>/usr/uploads</code></p>
-'.($errorUploadDir ? '<p class="message error">'.$errorUploadDir.'</p>':'').'
+'.(!empty($errorUploadDir) ? '<p class="message error">'.$errorUploadDir.'</p>':'').'
 ';
         $uploadDirDiv->html($uploadDirHTML);
 
@@ -533,7 +533,7 @@ SQL;
         $gravatarPrefixHTML = '<label class="typecho-label">Gravatar头像地址前缀</label>
 <input type="text" class="text" value="' . $options->gravatarPrefix . '" name="gravatarPrefix" />
 <p class="description">Gravatar头像地址前缀，默认为<code>gravatar官方</code></p>
-'.($errorGravatarDir ? '<p class="message error">'.$errorGravatarDir.'</p>':'').'
+'.(!empty($errorGravatarDir) ? '<p class="message error">'.$errorGravatarDir.'</p>':'').'
 ';
         $gravatarPrefixDiv->html($gravatarPrefixHTML);
 
