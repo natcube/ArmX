@@ -516,16 +516,17 @@ SQL;
         }
 
         $uploadDirDiv = new Typecho_Widget_Helper_Layout('div', array('class'=>'typecho-option', 'id' => 'uploadDir-option'));
+        $errorUploadDir = false;
         if (!empty($options->uploadDir) && defined('__TYPECHO_UPLOAD_DIR__') && $options->uploadDir!= __TYPECHO_UPLOAD_DIR__) {
             $errorUploadDir = _t('警告：请删除常量 %s 定义，或修改为 %s', '<code>__TYPECHO_UPLOAD_DIR__</code>', '<code>'.$options->uploadDir.'</code>');
         }
         $uploadDirHTML = '<label class="typecho-label">上传目录</label>
 <input type="text" class="text" value="' . $options->uploadDir . '" name="uploadDir" />
 <p class="description">修改上传目录，默认目录为<code>/usr/uploads</code></p>
-'.(!empty($errorUploadDir) ? '<p class="message error">'.$errorUploadDir.'</p>':'').'
+'.($errorUploadDir ? '<p class="message error">'.$errorUploadDir.'</p>':'').'
 ';
         $uploadDirDiv->html($uploadDirHTML);
-
+        $errorGravatarDir = false;
         $gravatarPrefixDiv = new Typecho_Widget_Helper_Layout('div', array('class'=>'typecho-option', 'id' => 'gravatarPrefix-option'));
         if (!empty($options->gravatarPrefix) && defined('__TYPECHO_GRAVATAR_PREFIX__') && $options->gravatarPrefix!= __TYPECHO_GRAVATAR_PREFIX__) {
             $errorGravatarDir = _t('警告：请删除常量 %s 定义，或修改为 %s', '<code>__TYPECHO_GRAVATAR_PREFIX__</code>', '<code>'.$options->gravatarPrefix.'</code>');
@@ -533,7 +534,7 @@ SQL;
         $gravatarPrefixHTML = '<label class="typecho-label">Gravatar头像地址前缀</label>
 <input type="text" class="text" value="' . $options->gravatarPrefix . '" name="gravatarPrefix" />
 <p class="description">Gravatar头像地址前缀，默认为<code>gravatar官方</code></p>
-'.(!empty($errorGravatarDir) ? '<p class="message error">'.$errorGravatarDir.'</p>':'').'
+'.($errorGravatarDir ? '<p class="message error">'.$errorGravatarDir.'</p>':'').'
 ';
         $gravatarPrefixDiv->html($gravatarPrefixHTML);
 
