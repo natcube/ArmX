@@ -3,17 +3,29 @@
 
 Armx for Typecho 主題簡潔明了，一眼就看上了，但套用到自己站上有點問題，故做了定制化修改。
 
+主要新增功能有：
+
+1. 自適應圖庫，放大縮小播放隨心所欲；
+2. 語音朗讀文章，用聲音感受世界；
+3. 自動夜間模式，保護妳的眼睛；
+4. 評論表情，心情躍然紙上；
+5. 懶加載，提高資源利用；
+6. 回復可見，精彩無限；
+7. 獨立模板，豐富充實；
+8. 高度自定義模塊，放飛個性；
+9. ......
+
 # Demo
 
-https://blog.vircloud.net
+https://vircloud.net
 
 # 説明
 
-https://blog.vircloud.net/default/change-theme.html
+https://vircloud.net/default/change-theme.html
 
 # 獲取
 
-此處源碼為原版未修改版，因定制化較大，不能直接套用，需要的請聯絡我。
+此處源碼為原版未修改版，因定制化較大，不能直接套用，故請通過上述說明鏈接進入下載。
 
 --------------------------------------------------
 
@@ -21,15 +33,15 @@ https://blog.vircloud.net/default/change-theme.html
 
 --------------------------------------------------
 
-# ArmX
+## ArmX
 
 typecho主题及插件ArmX 欢迎使用
 
-# Demo
+## Demo
 
 https://codeup.me
 
-# 主页
+## 主页
 
 https://codeup.me/armx.html
 
