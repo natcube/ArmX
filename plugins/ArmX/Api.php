@@ -302,6 +302,9 @@ class ArmX_Api extends Typecho_Widget
 	 */
 	protected function responseData($data)
 	{
+		if(is_string($data)){
+			$data = Json::decode($data);
+		}
 		if (isset($_GET['callback'])) {
 			$jsonp = empty($_GET['callback']) ? 'jsonp' : $_GET['callback'];
 			$this->response->setContentType();

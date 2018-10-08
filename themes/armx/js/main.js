@@ -883,7 +883,7 @@ var cookie = (function(doc){
       };
       this.cache = this.__getCache();
       this.__bindEvent();
-      this.__audio();
+      //this.__audio();
       element.ArmPlayer = this;
       players.push(element);
       if (options.source && options.source.list) {
@@ -900,14 +900,13 @@ var cookie = (function(doc){
 
   Player.prototype.initPlayer = function() {
     var options =this.options;
+    var id = options.start;
     if (this.canplayCache()) {
         this.log('from cache '+this.cache.id);
         this.initCache = true;
-        this.play(this.cache.id, true);
+        id = this.cache.id;
     }
-    if(options.autoStart){
-        this.play(options.start, true);
-    }
+    this.play(id, true);
   }
 
   Player.prototype.log = function(log){
@@ -937,7 +936,7 @@ var cookie = (function(doc){
           return false;
         }
         if (id) {
-           that.play(1*id);
+           that.play(1*id, 'click');
         }
      });
 
@@ -1234,19 +1233,20 @@ var cookie = (function(doc){
     }
     this.thumbFrame.innerHTML = data.pic ? '<img src="'+data.pic+'">' : '';
     this.resetplay = false;
-    this.playing = true;
-    if (this.initCache) {
-      this.playing = this.cache.playing;
-    }
-    this.playing && this.__toggle(false);
+    this.playing = false;
+    // if (this.initCache) {
+    //     this.playing = this.cache.playing;
+    // }
+    // this.playing && this.__toggle(false);
     this.playId = id;
     this.playData = {
        music: data
     };
-    var audio = this.__audio();
-    audio.paused = true;
-    audio.src = data.src;
-    audio.load();
+    this.__audio(data.src);
+    this.audio.load();
+    if(this.playType&&this.playType!=='init'){
+      this.__setPlay(true);
+    }
     typeof this.options.onload == "function" && typeof this.options.onload.call(this, this.musicTitle, data);
   }
 
@@ -1275,13 +1275,13 @@ var cookie = (function(doc){
         this.__setCache();
         this.initCache = false;
      }
-     if (this.playing && !this.hangup) {
-        this.log('canplay-toplay');
-        this.__toggle(false);
-        this.hangup = true;
-        this.audio.play();
-        typeof this.options.onplay == "function" && typeof this.options.onplay.call(this, this.musicTitle);
-     }
+    //  if (this.playing && !this.hangup) {
+    //     this.log('canplay-toplay');
+    //     this.__toggle(false);
+    //     this.hangup = true;
+    //     this.audio.play();
+    //     typeof this.options.onplay == "function" && typeof this.options.onplay.call(this, this.musicTitle);
+    //  }
   }
 
   Player.prototype.__disabled = function(id, type){
@@ -1410,7 +1410,7 @@ var cookie = (function(doc){
       this.thumbFrame.innerHTML = data.pic ? '<img src="'+data.pic+'">' : '';
       this.__toggle(true);
       this.__scrollMenu(init);
-      if (!this.audio.paused) {
+      if (this.audio && !this.audio.paused) {
          this.audio.pause();
       }else{
         this.__progress(0);
@@ -1434,15 +1434,21 @@ var cookie = (function(doc){
       }
   }
 
-  Player.prototype.__audio = function(){
-     if (!this.audio) {
+  Player.prototype.__audio = function(src){
+     
+        var _audio = document.getElementById('armplayer_audio');
+        _audio && this.element.removeChild(_audio);
+        this.audio = null;
         var audio = document.createElement('AUDIO');
+        audio.id = 'armplayer_audio';
         audio.preload = "auto";
-        audio.style.display = 'none';
+        audio.src = src;
+        audio.style.display = "none";
         this.element.appendChild(audio);
         this.__bindAudioEvents(audio);
         this.audio = audio;
-     }
+        this.audio.volume = 1;
+     
      return this.audio;
   }
 

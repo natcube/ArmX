@@ -750,7 +750,7 @@ body .loading-active {
 	color: #444;
 }
 .recent {
-	margin-top: 10px;
+	margin-top: 13px;
 	clear: both;
 }
 .recent-0 {
@@ -2244,7 +2244,7 @@ body .loading-active {
 		line-height: 22px;
 	}
 
-	.post-title a {
+	.post-title a, .recent .recent-title {
 		font-size: 16px;
 	}
 
