@@ -1,5 +1,5 @@
 
-# 概述
+## 概述
 
 Armx for Typecho 主題簡潔明了，一眼就看上了，但套用到自己站上有點問題，故做了定制化修改。
 
@@ -15,17 +15,21 @@ Armx for Typecho 主題簡潔明了，一眼就看上了，但套用到自己站
 8. 高度自定義模塊，放飛個性；
 9. ......
 
-# Demo
+## Demo
 
 https://vircloud.net
 
-# 説明
+## 説明
 
 https://vircloud.net/default/change-theme.html
 
-# 獲取
+## 獲取
 
-此處源碼為原版未修改版，因定制化較大，不能直接套用，故請通過上述說明鏈接進入下載。
+已上傳至 [GitHub](https://github.com/vircloud/ArmXMod/)。
+
+## 更新日志
+
+[Changelog](https://github.com/vircloud/ArmXMod/blob/master/themes/armx/README.md)
 
 --------------------------------------------------
 
@@ -33,15 +37,15 @@ https://vircloud.net/default/change-theme.html
 
 --------------------------------------------------
 
-## ArmX
+### ArmX
 
 typecho主题及插件ArmX 欢迎使用
 
-## Demo
+### Demo
 
 https://codeup.me
 
-## 主页
+### 主页
 
 https://codeup.me/armx.html
 
