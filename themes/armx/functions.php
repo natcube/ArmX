@@ -751,62 +751,6 @@ function threadedComments($that, $singleCommentOptions)
 }
 
 /**
- * 获取第三方登录态
- * @author NatLiu
- * @date   2018-01-24T14:01:06+0800
- * @return [type]                   [description]
- */
-function getAuth()
-{
-    if (empty(Typecho_Cookie::get('__typecho_oauth_openid'))) {
-        return false;
-    }
-    return array(
-            'openid' => Typecho_Cookie::get('__typecho_oauth_openid'),
-            'nickname' => Typecho_Cookie::get('__typecho_oauth_nickname'),
-            'avatar' => Typecho_Cookie::get('__typecho_oauth_avatar')
-        );
-}
-
-/**
- * 显示登录人员
- * @author NatLiu
- * @date   2018-01-24T14:01:19+0800
- * @param  [type]                   $user    [description]
- * @param  [type]                   $options [description]
- * @param  [type]                   $request [description]
- * @return [type]                            [description]
- */
-function the_user($user, $options, $request)
-{
-    $avatar = Typecho_Common::gravatarUrl($user->mail, 36, 'X', 'mm', $request->isSecure());
-    $auth = getAuth();
-    $profile = $options->profileUrl;
-    if ($auth) {
-        $avatar = preg_replace('/^http(s)?:\/\//', 'https://', $auth['avatar']);
-    }
-?>
-    <div class="user-tools" id="user-tools">
-        <img src="<?php echo $avatar;?>" />
-    <div class="user-menu" id="user-menu">
-        <?php if($auth):?>
-        <a class="user-item" data-action="dialog.register_bind" href="javascript:;">绑定账号</a>
-        <a class="user-item" data-action="oauth.logout">退出登录</a>
-        <?php elseif( $user->hasLogin() ):?>
-        <a class="user-item" data-no-instant target="_blank" href="<?php echo $profile;?>">个人中心</a>
-        <a class="user-item" data-action="logout">退出登录</a>
-        <?php else:?>
-        <a class="user-item" data-action="dialog.login">登录</a>
-        <?php if($options->allowRegister):?>
-        <a class="user-item" data-action="dialog.register">注册</a>
-        <?php endif;?>
-        <?php endif;?>
-    </div>
-    </div>
-<?php
-}
-
-/**
  * 获取文章分类
  * @author NatLiu
  * @date   2018-01-24T14:01:28+0800
