@@ -4,7 +4,7 @@
  * 
  * @package <a href="https://vircloud.net/default/change-theme.html" target="_blank" style="text-decoration:none;color:#444;" title="更新历史">ArmX Mod for Typecho</a>
  * @author 欧文斯
- * @version 6.0.3
+ * @version 6.0.4
  * @link https://vircloud.net
  */
 
