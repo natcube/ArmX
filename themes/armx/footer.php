@@ -368,7 +368,9 @@ document.body.oncopy=function(){ArmMessage.warn('复制成功！引用转载请�
  * InstantClick
  */
 if(InstantClick && InstantClick.supported){
-	InstantClick.expire(43200*1000); // 设置缓存时间12h
+	<?php if(!empty($this->options->pexpire)){
+                echo "InstantClick.expire(".$this->options->pexpire."*1000);";
+        }?>
 	InstantClick.content('page');
 	InstantClick.on('change', function(init){ //页面已更改
 		if(!init){
