@@ -35,7 +35,7 @@ style="background-image: url('<?php echo fullurl($this->options->ismeaboutimg,0)
 <?php if(!empty($this->options->ismegithub)){
   echo '<a href="'.fullurl($this->options->ismegithub,0).'" target="_blank"><i class="fa fa-github"></i></a>';}?>
 <?php if(!empty($this->options->ismeaemail)){
-  echo '<a href="mailto:'.fullurl($this->options->ismeaemail,0).'" target="_blank"><i class="fa fa-envelope"></i></a>';}?>
+  echo '<a href="mailto:'.$this->options->ismeaemail.'"><i class="fa fa-envelope"></i></a>';}?>
 <a href="<?php $this->options->feedUrl(); ?>" target="_blank"><i class="fa fa-rss-square"></i></a>
            </div>
            <div class="card widget-desc"><?php if($this->options->ismeabout){echo $this->options->ismeabout;}else{echo $this->options->description();} ?></div>
