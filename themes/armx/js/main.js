@@ -177,7 +177,7 @@ function search(){
     if(!val || !val.length){
       return returnFalse('请输入关键词');
     }
-    ajaxForm(form, 'https://codeup.me/search/'+ encodeURIComponent(val) +'/');
+    ajaxForm(form, '/search/'+ encodeURIComponent(val) +'/');
 }
 
 function validate(data, rule){
