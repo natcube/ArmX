@@ -573,7 +573,7 @@ ArmX 主题页面挺简单的，一眼就看上了，但是有很多不完善的
 
 ## 支持
 
-[Armx Mod for Typecho](https://vircloud.net/default/change-theme.html?ipage=2) 主题目前免费下载使用，但开发不易，欢迎打赏支持，让我更有动力继续更新，做出更精美的主题！
+[Armx Mod for Typecho](https://vircloud.net/default/change-theme.html) 主题目前免费下载使用，但开发不易，欢迎打赏支持，让我更有动力继续更新，做出更精美的主题！
 
 ## 安装
 
@@ -589,10 +589,6 @@ ArmX 主题页面挺简单的，一眼就看上了，但是有很多不完善的
 
 **插件**：务必下载本站提供插件，其他地方下载的可能无法使用，因为为配合主题有做了一些修改。
 
-#### 配套工具
-
-下载并解压到 /ext/ 目录下（默认），有 qr（本地生成二维码必备）、link（外链转内链必备），如果在配置中没有启用本地二维码、转内链，则此步忽略；
-
 ### 使用
 
 #### 参数配置
@@ -607,6 +603,8 @@ ArmX 主题页面挺简单的，一眼就看上了，但是有很多不完善的
 
 自定义友情链接位置：侧栏，链接分类设为 index，内页，设为 one；
 
+自定义文章分页：自定义字段，字段名：next，值为 y 或 Y，然后在需要文章分页的位置添加 [next]（不添加则按主题设置的字数自动分页）；
+
 ## 帮助
 
 如果安装使用中有什么问题或者建议，可以在下方评论处留言，或者通过 [首页-关于博主](https://vircloud.net/) 下的联系方式与我取得联系，我会尽快处理。
@@ -617,6 +615,6 @@ ArmX 主题页面挺简单的，一眼就看上了，但是有很多不完善的
 
 ## 扩展
 
-1、《[Armx Mod for Typecho 短代码演示](https://vircloud.net/change-theme-1.html)》
+1、《[Armx Mod for Typecho 短代码演示](https://vircloud.net/change-theme-tag.html)》
 
 
