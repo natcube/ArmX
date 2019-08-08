@@ -645,7 +645,7 @@ function threadedComments($that, $singleCommentOptions)
       <?php  if (Helper::options()->lazyimg) :?> 
           <img class="avatar lazyloading circular b-lazy" src="<?php echo __LAZYIMG__; ?>" data-src="<?php echo fullurl(avatar($that->mail),0); ?>" alt="<?php echo $that->author; ?>" width="<?php echo $size ?>" height="<?php echo $size ?>"/>
       <?php else:?>
-          <?php $that->gravatar($singleCommentOptions->avatarSize, $singleCommentOptions->defaultAvatar); ?>
+          <img class="avatar lazyloading circular" src="<?php echo avatar($that->mail); ?>" alt="<?php echo $that->author; ?>" width="<?php echo $size ?>" height="<?php echo $size ?>" />
       <?php endif;?>
     </div>
 <div class="comment-body">
