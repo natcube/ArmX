@@ -133,6 +133,9 @@ function ajaxForm(form, $url){
    if (this.slug && !validate(data, this.slug)) {
      return;
    }
+   if (typeof InstantClick == "undefined"){
+      return form.submit();
+   }
    if (!InstantClick.supported) {
       return form.submit();
    }
