@@ -433,6 +433,8 @@ function lIIIIl($l1, $l2) {
 	if (strlen ( $l3 ) == 0) {
 		return $l1;
 	}
+	$port = isset($url_parsed ["port"]) ? ":".$url_parsed ["port"] : NULL;
+	$l3 = $l3 . $port;
 	if(!empty($url_parsed ["path"])){
 	$path = dirname ( $url_parsed ["path"] );
 	if ($path [0] == "\\") { 
@@ -491,7 +493,7 @@ function formaturl($l1, $l2) {
 * 单独补齐链接
 */
 function fullurl($url,$host){
-    $realhost = Helper::options()->rootUrl;
+    $realhost = Helper::options()->siteUrl;
     if($host){
       $realurl = lIIIIl ( $url, $host );
     }else{
