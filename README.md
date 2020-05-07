@@ -53,6 +53,9 @@ https://vircloud.net/
 
 https://vircloud.net/default/change-theme.html
 
+## 配置指導
+
+https://vircloud.net/change-theme-guidance.html
 
 ## 更新日誌
 
